@@ -1,7 +1,7 @@
 {
   "extractors": [
     {
-      "title": "pfSense_Group_Common_IPv4Data",
+      "title": "pfSense_Group_Common_IPv4",
       "extractor_type": "regex",
       "converters": [],
       "order": 0,
@@ -13,7 +13,142 @@
       },
       "condition_type": "none",
       "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv4_TOS",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Field_Common_IPv4_TOS",
+      "extractor_config": {
+        "index": 1,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv4_ECN",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Field_Common_IPv4_ECN",
+      "extractor_config": {
+        "index": 2,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv4_TTL",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Field_Common_IPv4_TTL",
+      "extractor_config": {
+        "index": 3,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv4_PacketID",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Field_Common_IPv4_PacketID",
+      "extractor_config": {
+        "index": 4,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv4_Offset",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Field_Common_IPv4_Offset",
+      "extractor_config": {
+        "index": 5,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv4_Flags",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Field_Common_IPv4_Flags",
+      "extractor_config": {
+        "index": 6,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv4_ProtocolID",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Field_Common_IPv4_ProtocolID",
+      "extractor_config": {
+        "index": 7,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv4_Protocol",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Field_Common_IPv4_Protocol",
+      "extractor_config": {
+        "index": 8,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
     }
- ],
+  ],
   "version": "4.2.7"
 }

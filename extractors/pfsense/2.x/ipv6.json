@@ -98,6 +98,56 @@
       },
       "condition_type": "none",
       "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv6_Length",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 4010,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv6",
+      "target_field": "pfSense_Group_Common_Length",
+      "extractor_config": {
+        "index": 1,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv6_SourceIP",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 4020,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv6",
+      "target_field": "pfSense_Group_Common_SourceIP",
+      "extractor_config": {
+        "index": 2,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv6_DestinationIP",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 4030,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv6",
+      "target_field": "pfSense_Group_Common_DestinationIP",
+      "extractor_config": {
+        "index": 3,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
     }
   ],
   "version": "4.2.7"

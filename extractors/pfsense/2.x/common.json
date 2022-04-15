@@ -150,7 +150,7 @@
       "condition_value": ""
     },
     {
-      "title": "pfSense_Common_Field_Common_IPVersion",
+      "title": "pfSense_Field_Common_Common_IPVersion",
       "extractor_type": "split_and_index",
       "converters": [
         {

@@ -1,0 +1,79 @@
+{
+  "extractors": [
+    {
+      "title": "pfSense_Group_Common_UDP",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 50,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "pfSense_Group_Common_UDP",
+      "extractor_config": {
+        "regex_value": "^(?:.*,(?:4|6),.*,(?:udp|UDP),.*,.*,.*,)(?<UDPSPECIFICDATA>.*,.*,.*).*$"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_UDP_SourcePort",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 5010,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_UDP",
+      "target_field": "pfSense_Group_Common_UDP_SourcePort",
+      "extractor_config": {
+        "index": 1,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_UDP_DestinationPort",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 5020,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_UDP",
+      "target_field": "pfSense_Group_Common_UDP_DestinationPort",
+      "extractor_config": {
+        "index": 2,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_UDP_DataLength",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 5030,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_UDP",
+      "target_field": "pfSense_Group_Common_UDP_DataLength",
+      "extractor_config": {
+        "index": 3,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    }
+  ],
+  "version": "4.2.7"
+}

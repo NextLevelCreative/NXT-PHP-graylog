@@ -1,19 +1,104 @@
 {
   "extractors": [
     {
-      "title": "pfSense_Group_Common_IPv6Data",
+      "title": "pfSense_Group_Common_IPv6",
       "extractor_type": "regex",
       "converters": [],
-      "order": 0,
+      "order": 30,
       "cursor_strategy": "copy",
       "source_field": "message",
-      "target_field": "pfSense_Group_Common_IPv6Data",
+      "target_field": "pfSense_Group_Common_IPv6",
       "extractor_config": {
-        "regex_value": "^.*,(?:in|out),6,(?<IPV6SPECIFICDATA>(.*),(tcp|TCP|udp|UDP|icmp|ICMP|carp|CARP),\d+),.*$"
+        "regex_value": "^.*,(?:in|out),6,(?<IPV6SPECIFICDATA>(.*),(tcp|TCP|udp|UDP|icmp|ICMP|carp|CARP)),.*$"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Field_Common_IPv6_Class",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 3010,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv6",
+      "target_field": "pfSense_Field_Common_IPv6_Class",
+      "extractor_config": {
+        "index": 1,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv6_FlowLabel",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 3020,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv6",
+      "target_field": "pfSense_Group_Common_IPv6_FlowLabel",
+      "extractor_config": {
+        "index": 2,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv6_HopLimit",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 3030,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv6",
+      "target_field": "pfSense_Group_Common_IPv6_HopLimit",
+      "extractor_config": {
+        "index": 3,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv6_Protocol",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 3040,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv6",
+      "target_field": "pfSense_Group_Common_IPv6_Protocol",
+      "extractor_config": {
+        "index": 4,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv6_ProtocolID",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 3050,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv6",
+      "target_field": "pfSense_Group_Common_IPv6_ProtocolID",
+      "extractor_config": {
+        "index": 5,
+        "split_by": ","
       },
       "condition_type": "none",
       "condition_value": ""
     }
- ],
+  ],
   "version": "4.2.7"
 }

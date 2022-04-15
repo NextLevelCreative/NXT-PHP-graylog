@@ -26,7 +26,7 @@
       "order": 5010,
       "cursor_strategy": "copy",
       "source_field": "pfSense_Group_Common_UDP",
-      "target_field": "pfSense_Group_Common_UDP_SourcePort",
+      "target_field": "pfSense_Group_Common_SourcePort",
       "extractor_config": {
         "index": 1,
         "split_by": ","
@@ -46,7 +46,7 @@
       "order": 5020,
       "cursor_strategy": "copy",
       "source_field": "pfSense_Group_Common_UDP",
-      "target_field": "pfSense_Group_Common_UDP_DestinationPort",
+      "target_field": "pfSense_Group_Common_DestinationPort",
       "extractor_config": {
         "index": 2,
         "split_by": ","
@@ -66,7 +66,7 @@
       "order": 5030,
       "cursor_strategy": "copy",
       "source_field": "pfSense_Group_Common_UDP",
-      "target_field": "pfSense_Group_Common_UDP_DataLength",
+      "target_field": "pfSense_Group_Common_DataLength",
       "extractor_config": {
         "index": 3,
         "split_by": ","

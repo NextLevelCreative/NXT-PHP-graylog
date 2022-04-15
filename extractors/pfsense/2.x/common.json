@@ -9,7 +9,7 @@
       "source_field": "message",
       "target_field": "pfSense_Group_Common",
       "extractor_config": {
-        "regex_value": "^(?<COMMON>(.*,(?:in|out),(?:4|6)),.*$"
+        "regex_value": "^(?<COMMON>(.*),(?:in|out),(?:4|6)),.*$"
       },
       "condition_type": "none",
       "condition_value": ""

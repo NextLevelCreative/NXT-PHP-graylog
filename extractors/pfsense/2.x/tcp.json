@@ -1,0 +1,184 @@
+{
+  "extractors": [
+    {
+      "title": "pfSense_Group_Common_TCP",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 40,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "pfSense_Group_Common_TCP",
+      "extractor_config": {
+        "regex_value": "^.*,(?:(in|out),(4|6),(.*),(tcp|TCP),\d+,(?:.*),(?:.*)),(?:<TCPSPECIFICDATA>(.*),(.*),(.*),(.*),(.*),(.*),(.*),(.*),(.*)).*$"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_SourcePort",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 4010,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_SourcePort",
+      "extractor_config": {
+        "index": 1,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_DestinationPort",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 4020,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_DestinationPort",
+      "extractor_config": {
+        "index": 2,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_DataLength",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 4030,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_DataLength",
+      "extractor_config": {
+        "index": 3,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_TCPFlags",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 4040,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_TCPFlags",
+      "extractor_config": {
+        "index": 4,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_SequenceNumber",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 4050,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_SequenceNumber",
+      "extractor_config": {
+        "index": 5,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_AckNumber",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 4060,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_AckNumber",
+      "extractor_config": {
+        "index": 6,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_TCPWindow",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 4070,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_TCPWindow",
+      "extractor_config": {
+        "index": 7,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_Urg",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 4080,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_Urg",
+      "extractor_config": {
+        "index": 8,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_TCP_TCPOptions",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 4090,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_TCP",
+      "target_field": "pfSense_Group_Common_TCP_TCPOptions",
+      "extractor_config": {
+        "index": 9,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    }
+  ],
+  "version": "4.2.7"
+}

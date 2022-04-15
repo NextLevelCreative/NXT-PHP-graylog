@@ -9,7 +9,7 @@
       "source_field": "message",
       "target_field": "pfSense_Group_Common_TCP",
       "extractor_config": {
-        "regex_value": "^(?:.*,4,.*,(?:tcp|TCP),.*,.*,.*,)(?<TCPSPECIFICDATA>.*,.*,.*,.*,.*,.*,.*,.*,.*).*$"
+        "regex_value": "^(?:.*,(?:4|6),.*,(?:tcp|TCP),.*,.*,.*,)(?<TCPSPECIFICDATA>.*,.*,.*,.*,.*,.*,.*,.*,.*).*$"
       },
       "condition_type": "none",
       "condition_value": ""

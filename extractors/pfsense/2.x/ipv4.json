@@ -9,7 +9,7 @@
       "source_field": "message",
       "target_field": "pfSense_Group_Common_IPv4",
       "extractor_config": {
-        "regex_value": "^.*,(?:in|out),4,(?<IPV4SPECIFICDATA>(.*),(tcp|TCP|udp|UDP|icmp|ICMP|carp|CARP)),.*$"
+        "regex_value": "^.*,(?:in|out),4,(?<IPV4SPECIFICDATA>(.*),(tcp|TCP|udp|UDP|icmp|ICMP|carp|CARP),\d+,(?:.*),(?:.*)),.*$"
       },
       "condition_type": "none",
       "condition_value": ""
@@ -144,6 +144,56 @@
       "target_field": "pfSense_Field_Common_IPv4_Protocol",
       "extractor_config": {
         "index": 8,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv4_Length",
+      "extractor_type": "split_and_index",
+      "converters": [
+        {
+          "type": "numeric",
+          "config": {}
+        }
+      ],
+      "order": 2090,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Group_Common_Length",
+      "extractor_config": {
+        "index": 9,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv4_SourceIP",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 2100,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Group_Common_SourceIP",
+      "extractor_config": {
+        "index": 10,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "pfSense_Group_Common_IPv4_DestinationIP",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 2110,
+      "cursor_strategy": "copy",
+      "source_field": "pfSense_Group_Common_IPv4",
+      "target_field": "pfSense_Group_Common_DestinationIP",
+      "extractor_config": {
+        "index": 11,
         "split_by": ","
       },
       "condition_type": "none",

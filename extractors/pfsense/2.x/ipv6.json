@@ -9,7 +9,7 @@
       "source_field": "message",
       "target_field": "pfSense_Group_Common_IPv6",
       "extractor_config": {
-        "regex_value": "^.*,(?:in|out),6,(?<IPV6DATA>(.*),(tcp|TCP|udp|UDP|icmp|ICMP|carp|CARP),\d+,(?:.*),(?:.*)),.*$"
+        "regex_value": "^(?:.*,(?:in|out),6,)(?<IPV6DATA>.*,(?:tcp|TCP|udp|UDP|icmp|ICMP|carp|CARP),\d+)(?:,.*),.*$"
       },
       "condition_type": "none",
       "condition_value": ""

@@ -9,7 +9,7 @@
       "source_field": "message",
       "target_field": "pfSense_Group_Common_IPv6",
       "extractor_config": {
-        "regex_value": "^.*,(?:in|out),6,(?<IPV6SPECIFICDATA>(.*),(tcp|TCP|udp|UDP|icmp|ICMP|carp|CARP)),.*$"
+        "regex_value": "^.*,(?:in|out),6,(?<IPV6SPECIFICDATA>(.*),(tcp|TCP|udp|UDP|icmp|ICMP|carp|CARP),\d+,(?:.*),(?:.*)),.*$"
       },
       "condition_type": "none",
       "condition_value": ""
@@ -108,12 +108,12 @@
           "config": {}
         }
       ],
-      "order": 4010,
+      "order": 3060,
       "cursor_strategy": "copy",
       "source_field": "pfSense_Group_Common_IPv6",
       "target_field": "pfSense_Group_Common_Length",
       "extractor_config": {
-        "index": 1,
+        "index": 6,
         "split_by": ","
       },
       "condition_type": "none",
@@ -123,12 +123,12 @@
       "title": "pfSense_Group_Common_IPv6_SourceIP",
       "extractor_type": "split_and_index",
       "converters": [],
-      "order": 4020,
+      "order": 3070,
       "cursor_strategy": "copy",
       "source_field": "pfSense_Group_Common_IPv6",
       "target_field": "pfSense_Group_Common_SourceIP",
       "extractor_config": {
-        "index": 2,
+        "index": 7,
         "split_by": ","
       },
       "condition_type": "none",
@@ -138,12 +138,12 @@
       "title": "pfSense_Group_Common_IPv6_DestinationIP",
       "extractor_type": "split_and_index",
       "converters": [],
-      "order": 4030,
+      "order": 3080,
       "cursor_strategy": "copy",
       "source_field": "pfSense_Group_Common_IPv6",
       "target_field": "pfSense_Group_Common_DestinationIP",
       "extractor_config": {
-        "index": 3,
+        "index": 8,
         "split_by": ","
       },
       "condition_type": "none",
